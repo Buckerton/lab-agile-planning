@@ -1,2 +1,2 @@
-# lab-agile-planning
-This repo contains the lab for agile planning for our Grade Tracker project
+# GradeTracker-CPTS322
+This is the repository for our group project.
