@@ -3,33 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Crimson Canvas — Login</title>
-  <link rel="stylesheet" href="homeStyle.css"> <!-- Linking to external CSS -->
+  <title>Crimson Canvas — Register</title>
+  <link rel="stylesheet" href="homeStyle.css">
 </head>
 <body>
-  <!-- Project Title -->
-  <div class="web-name">
-    <h1>Crimson Canvas</h1>
-  </div>
+  <!-- Registration Box -->
+  <div class="register-container">
+    <h2>Create Account</h2>
+    <form id="RegisterForm">
+      <!-- Username, email, password fields -->
+      <input type="text" id="newUsername" placeholder="Username (3–20 chars)" minlength="3" maxlength="20" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="newPassword" placeholder="Password (min 6 chars)" minlength="6" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
 
-  <!-- Login Box -->
-  <div class="login-container">
-    <h2>Login</h2>
-    <form id="LoginForm">
-      <!-- Username input -->
-      <input type="text" id="username" placeholder="Username" required>
-      <!-- Password input -->
-      <input type="password" id="password" placeholder="Password" required>
-
-      <!-- Action buttons -->
-      <div class="button-row">
-        <button type="submit">Login</button>
-        <button type="button" id="forgotPassword">Forgot Password</button>
-        <button type="button" id="registerButton">Create Account</button>
-      </div>
+      <!-- Register button -->
+      <button type="submit">Register</button>
+      <!-- Back to login -->
+      <p class="small-text"><a href="index.html">Back to Login</a></p>
     </form>
   </div>
-  <!-- Link to JS that handles login logic -->
   <script src="script.js"></script>
 </body>
 </html>
