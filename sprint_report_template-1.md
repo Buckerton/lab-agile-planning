@@ -1,12 +1,13 @@
 # Sprint x Report 
 Video Link: 
 ## What's New (User Facing)
- * Feature 1 or Bug Fix 1
+ * Create a simple login page - Andres Sanchez 
  * Feature 2 or Bug Fix 2
  * Feature n or Bug Fix n
 
 ## Work Summary (Developer Facing)
 Provide a one paragraph synposis of what your team accomplished this sprint. Don't repeat the "What's New" list of features. Instead, help the instructor understand how you went about the work described there, any barriers you overcame, and any significant learnings for your team.
+So far whats accomplished is a simple login page. The process of making the login page was super easy since it was just front end focued. I had to do a bit of research to see what the kekwords were in HTML to create boxes and stuff however it was not bad at all. I learned how to link items so I can style them in css.
 
 ## Unfinished Work
 If applicable, explain the work you did not finish in this sprint. For issues/user stories in the current sprint that have not been closed, (a) any progress toward completion of the issues has been clearly tracked (by checking the checkboxes of  acceptance criteria), (b) a comment has been added to the issue to explain why the issue could not be completed (e.g., "we ran out of time" or "we did not anticipate it would be so much work"), and (c) the issue is added to a subsequent sprint, so that it can be addressed later.
@@ -14,7 +15,7 @@ If applicable, explain the work you did not finish in this sprint. For issues/us
 ## Completed Issues/User Stories
 Here are links to the issues that we completed in this sprint:
 
- * URL of issue 1
+ *[ URL of issue 1]: (https://github.com/Buckerton/lab-agile-planning/issues/10#issue-3475788915)
  * URL of issue 2
  * URL of issue n
 
@@ -41,22 +42,23 @@ Here are links to the issues that we completed in this sprint:
 
 ## Code Files for Review
 Please review the following code files, which were actively developed during this sprint, for quality:
- * [Name of code file 1](https://github.com/your_repo/file_extension)
- * [Name of code file 2](https://github.com/your_repo/file_extension)
+ * [index.html](index.html)
+ * [homeStyle.css](homeStyle.css)
  * [Name of code file 3](https://github.com/your_repo/file_extension)
  
 ## Retrospective Summary
 Here's what went well:
-  * Item 1
+  * Item 1: We knew what we wanted to do
   * Item 2
   * Item x
  
 Here's what we'd like to improve:
-   * Item 1
+   * Item 1: Using the discord Kanban Board we wasnt aware we needed to create user stories for everysingle thing we did hence why they werent created until recently
    * Item 2
    * Item x
   
 Here are changes we plan to implement in the next sprint:
-   * Item 1
+   * Item 1: Using Kanban board
    * Item 2
+
    * Item x
