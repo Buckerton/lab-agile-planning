@@ -1,69 +1,69 @@
-/*This is the styling page for the loign page */
-
+/* General page style */
 body {
-   font-family: Arial, sans-serif; 
-   background-color: rgb(255, 255, 255);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 100vh;
-   margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(255,255,255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
 }
 
-/*styling for login page*/
-
-.login-container { /*styling for login box*/
-    background-color: white;
-    padding: 2rem;
-    border-radius:  10px;
-    box-shadow: 0 0 10px rgba(0,0,0,1);
-    width: 300px;
-    text-align: center;
-}
-
-.login-container input { /*styling for input box*/
-    width: 75%;
-    margin: 10px 0;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.login-container button { /*styling for login button*/
-    width: 100%;
-    padding: 0.8rem;
-    background-color: #0078d7;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.login-container button:hover { /*gives darker hue when hovering on login*/
-    background-color: #005a9e;
-}
-
-.button-row {
-    display: flex;
-    width: 96%;
-    gap: 10px;
-}
-
-.button-row button{
-    flex: 1;
-}
-/*styling for title*/
-.web-name{
+/* Shared box styling (login, register, dashboard) */
+.web-name, .login-container, .register-container, .dashboard {
   background-color: white;
   padding: 2rem;
-  border-radius:  10px;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  width: 300px;
+  width: 320px;
   text-align: center;
-  position: absolute;
-  top: 10px;
-  left: 200px;
-  margin: 0;
-  font-size: 10;
-  color: black;
+  margin-bottom: 1rem;
+}
+
+/* Input fields */
+.login-container input,
+.register-container input {
+  width: 85%;
+  margin: 10px 0;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Buttons */
+.login-container button,
+.register-container button,
+.dashboard button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for buttons */
+.login-container button:hover,
+.register-container button:hover,
+.dashboard button:hover {
+  background-color: #005a9e;
+}
+
+/* Button row layout */
+.button-row {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin-top: 10px;
+}
+.button-row button {
+  flex: 1;
+}
+
+/* Small helper text */
+.small-text {
+  font-size: 0.85rem;
+  color: #555;
 }
