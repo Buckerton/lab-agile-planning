@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crimson Canvas — Login</title>
+  <link rel="stylesheet" href="homeStyle.css"> <!-- Linking to external CSS -->
+</head>
+<body>
+  <!-- Project Title -->
+  <div class="web-name">
+    <h1>Crimson Canvas</h1>
+  </div>
+
+  <!-- Login Box -->
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="LoginForm">
+      <!-- Username input -->
+      <input type="text" id="username" placeholder="Username" required>
+      <!-- Password input -->
+      <input type="password" id="password" placeholder="Password" required>
+
+      <!-- Action buttons -->
+      <div class="button-row">
+        <button type="submit">Login</button>
+        <button type="button" id="forgotPassword">Forgot Password</button>
+        <button type="button" id="registerButton">Create Account</button>
+      </div>
+    </form>
+  </div>
+  <!-- Link to JS that handles login logic -->
+  <script src="script.js"></script>
+</body>
+</html>
