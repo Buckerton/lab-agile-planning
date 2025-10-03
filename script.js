@@ -77,20 +77,22 @@ document.addEventListener("DOMContentLoaded", () => {
       const email = document.getElementById("email").value.trim();
       const password = document.getElementById("newPassword").value;
       const confirmPassword = document.getElementById("confirmPassword").value;
+      const errorEl = document.getElementById("registerError");
+
+      errorEl.textContent = ""; // clear old error
 
       if (password !== confirmPassword) {
-        alert("Passwords do not match!");
+        errorEl.textContent = "Passwords do not match!";
         return;
       }
       try {
         createUser({ username, email, password });
-        alert("Account created successfully! You can now log in.");
-        window.location.href = "index.html"; // redirect back to login
+        window.location.href = "index.html";
       } catch (err) {
-        alert(err.message);
-      }
-    });
-  }
+        errorEl.textContent = err.message;
+    }
+  });
+}
 
   // Handle login form submission
   const loginForm = document.getElementById("LoginForm");
@@ -99,14 +101,16 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const username = document.getElementById("username").value.trim();
       const password = document.getElementById("password").value;
+      const errorEl = document.getElementById("loginError");
+
+      errorEl.textContent = ""; // clear old 
 
       const user = findUserByCredentials(username, password);
       if (!user) {
-        alert("Invalid username or password.");
+        errorEl.textContent = "Invalid username or password.";
         return;
       }
       setSession(user.username);
-      alert("Login successful! Redirecting...");
       window.location.href = "dashboard.html";
     });
   }
