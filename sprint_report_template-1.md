@@ -37,16 +37,10 @@ Here are links to the issues that we completed in this sprint:
  ## Incomplete Issues/User Stories
  Here are links to issues we worked on but did not complete in this sprint:
  
- * URL of issue 1 <<https://github.com/Buckerton/lab-agile-planning/issues/19 One sentence explanation of why issue was not completed>>
- * URL of issue 2 <<https://github.com/Buckerton/lab-agile-planning/issues/18 One sentence explanation of why issue was not completed>>
- * URL of issue 3 <<https://github.com/Buckerton/lab-agile-planning/issues/17 One sentence explanation of why issue was not completed>>
- * URL of issue 4 <<https://github.com/Buckerton/lab-agile-planning/issues/16 One sentence explanation of why issue was not completed>>
- 
- Examples of explanations (Remove this section when you save the file):
-  * "We ran into a complication we did not anticipate (explain briefly)." 
-  * "We decided that the feature did not add sufficient value for us to work on it in this sprint (explain briefly)."
-  * "We could not reproduce the bug" (explain briefly).
-  * "We did not get to this issue because..." (explain briefly)
+ * URL of issue 1 <<https://github.com/Buckerton/lab-agile-planning/issues/19 We did not get to this issue because we ran out of time due to midterms before sprint 1 was due>>
+ * URL of issue 2 <<https://github.com/Buckerton/lab-agile-planning/issues/18 We did not get to this issue because we ran out of time due to midterms before sprint 1 was due>>
+ * URL of issue 3 <<https://github.com/Buckerton/lab-agile-planning/issues/17 We did not get to this issue because we ran out of time due to midterms before sprint 1 was due>>
+ * URL of issue 4 <<https://github.com/Buckerton/lab-agile-planning/issues/16 We did not get to this issue because we ran out of time due to midterms before sprint 1 was due>>
 
 ## Code Files for Review
 Please review the following code files, which were actively developed during this sprint, for quality:
@@ -57,27 +51,26 @@ Please review the following code files, which were actively developed during thi
  * [script.js](https://github.com/Buckerton/lab-agile-planning/blob/main/script.js)
  * [forgot.html](https://github.com/Buckerton/lab-agile-planning/blob/main/forgot.html)
  * [reset.html](https://github.com/Buckerton/lab-agile-planning/blob/main/reset.html)
- * [Name of code file 3](https://github.com/your_repo/file_extension)
  
 ## Retrospective Summary
 Here's what went well:
   * Item 1: We knew what we wanted to do
-  * Item 2
-  * Item x
+  * Item 2: We met together and easily decided what we would all work on individually
+  * Item 3: Foundational issues that we worked on went well and developed smoothly with little to no problems
  
 Here's what we'd like to improve:
    * Item 1: Using the discord Kanban Board we wasnt aware we needed to create user stories for everysingle thing we did hence why they werent created until recently
    * Item 2: Holding a Planning Poker Meeting to estimate user stories relatively
-   * Item x
+   * Item 3: Working on more issues and developing more functionalities 
   
 Here are changes we plan to implement in the next sprint:
    * Item 1: Using Kanban board
    * Item 2: Holding a Planning Poker Meeting to estimate user stories relatively
-
-   * Item x
+   * Item 3: Working on more issues and developing more functionalities 
 
 Story point totals:
    * Arni Thorvaldsson - 2
+
 
 
 
