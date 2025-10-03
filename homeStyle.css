@@ -114,3 +114,9 @@ body.dark-mode button:hover {
 .dark-mode-top:hover {
   background-color: #444;
 }
+
+.error-message {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
