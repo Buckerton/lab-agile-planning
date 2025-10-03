@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crimson Canvas — Login</title>
+  <link rel="stylesheet" href="homeStyle.css"> <!-- Linking to external CSS -->
+</head>
+ <!-- Project Title -->
+<body>
+    <div class="web-name">
+        <h1>Crimson Canvas</h1>
+    </div>
+
+    <div class="login-container">
+        <h2>Reset your password</h2>
+        <form id="ForgotForm">
+            <input type="email" id="forgotEmail" placeholder="Enter your account email" required>
+            <button type="submit">Send reset link</button>
+        </form>
+
+        <p id="sentMessage" class="small-text"></p>
+        <!--  Demo-only: show reset link for testing -->
+        <div id="demoResetLink" style="word-break:break-all; margin-top:.5rem;"></div>
+
+        <div style="margin-top: 10px;">
+            <button onclick="location.href='index.html'">Back to login</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Password — Crimson Canvas</title>
+  <link rel="stylesheet" href="homeStyle.css"> <!-- adjust path if needed -->
+</head>
+<body>
+  <div class="web-name">
+    <h1>Reset Password</h1>
+  </div>
+
+  <div class="reset-container">
+    <h2>Enter a New Password</h2>
+    <form id="ResetForm">
+      <input type="password" id="newPassword" placeholder="New Password" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+      <div class="button-row">
+        <button type="submit">Reset Password</button>
+        <button type="button" onclick="window.location.href='../../index.html'">Back to Login</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

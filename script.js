@@ -65,9 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Forgot password placeholder
   const forgotBtn = document.getElementById("forgotPassword");
   if (forgotBtn) {
-    forgotBtn.addEventListener("click", () => {
-      alert("Demo only: password reset not implemented.");
-    });
+    forgotBtn.addEventListener("click", () => (window.location.href = "forgot.html"));
   }
 
   // Handle registration form submission
@@ -126,6 +124,70 @@ document.addEventListener("DOMContentLoaded", () => {
     if (who) who.textContent = sess.username;
     if (logoutBtn) logoutBtn.addEventListener("click", () => {
       clearSession();
+      window.location.href = "index.html";
+    });
+  }
+
+  // Handle forgot password form
+  const forgotForm = document.getElementById("ForgotForm");
+  if (forgotForm) {
+    forgotForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("forgotEmail").value;
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Look for user by email
+      const user = users.find(u => u.email === email);
+
+      if (!user) {
+        alert("Email not found. Please create an account.");
+        return;
+      }
+
+      // Store email for reset
+      localStorage.setItem("resetEmail", email);
+
+      // Go to reset.html
+      window.location.href = "reset.html";
+    });
+  }
+
+  // Handle reset password form
+  const resetForm = document.getElementById("ResetForm");
+  if (resetForm) {
+    resetForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const newPassword = document.getElementById("newPassword").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (newPassword !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      const email = localStorage.getItem("resetEmail");
+      if (!email) {
+        alert("Session expired. Please try again.");
+        window.location.href = "index.html";
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Update that user's password
+      users = users.map(user => {
+        if (user.email === email) {
+          return { ...user, password: newPassword };
+        }
+        return user;
+      });
+
+      localStorage.setItem("users", JSON.stringify(users));
+      localStorage.removeItem("resetEmail");
+
+      alert("Password has been reset successfully!");
       window.location.href = "index.html";
     });
   }
