@@ -130,3 +130,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Dark mode toggle logic
+const darkModeToggle = document.getElementById('darkModeToggle');
+
+if (darkModeToggle) {
+  // Apply saved dark mode preference on page load
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+  }
+
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+      localStorage.setItem('darkMode', 'enabled');
+    } else {
+      localStorage.setItem('darkMode', 'disabled');
+    }
+  });
+}
