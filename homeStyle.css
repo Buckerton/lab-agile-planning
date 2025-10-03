@@ -67,3 +67,50 @@ body {
   font-size: 0.85rem;
   color: #555;
 }
+
+/* Dark Mode Base Styles */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .web-name,
+body.dark-mode .login-container,
+body.dark-mode .register-container,
+body.dark-mode .dashboard {
+  background-color: #1e1e1e !important;
+  box-shadow: 0 0 20px rgba(255,255,255,0.15) !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode input,
+body.dark-mode button {
+  background-color: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
+
+body.dark-mode button:hover {
+  background-color: #555;
+}
+
+/* Dark Mode Toggle Button Positioned Top Right */
+.dark-mode-top {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  z-index: 999;
+  padding: 0.45rem 1.1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #222;
+  color: #eee;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  transition: background 0.2s;
+}
+
+.dark-mode-top:hover {
+  background-color: #444;
+}
