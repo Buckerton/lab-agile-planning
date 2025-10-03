@@ -24,7 +24,7 @@ Here are links to the issues that we completed in this sprint:
  *[ URL of issue 1]: (https://github.com/Buckerton/lab-agile-planning/issues/10#issue-3475788915)
  * URL of issue 2 https://github.com/Buckerton/lab-agile-planning/issues/11
  * URL of issue 3 https://github.com/Buckerton/lab-agile-planning/issues/13
- * URL of issue 3 https://github.com/Buckerton/lab-agile-planning/issues/15
+ * URL of issue 4 https://github.com/Buckerton/lab-agile-planning/issues/15
 
  Desirables (Remove this section when you save the file):
   * Each issue should be assigned to a milestone
@@ -37,9 +37,10 @@ Here are links to the issues that we completed in this sprint:
  ## Incomplete Issues/User Stories
  Here are links to issues we worked on but did not complete in this sprint:
  
- * URL of issue 1 <<One sentence explanation of why issue was not completed>>
- * URL of issue 2 <<One sentence explanation of why issue was not completed>>
- * URL of issue n <<One sentence explanation of why issue was not completed>>
+ * URL of issue 1 <<https://github.com/Buckerton/lab-agile-planning/issues/19 One sentence explanation of why issue was not completed>>
+ * URL of issue 2 <<https://github.com/Buckerton/lab-agile-planning/issues/18 One sentence explanation of why issue was not completed>>
+ * URL of issue 3 <<https://github.com/Buckerton/lab-agile-planning/issues/17 One sentence explanation of why issue was not completed>>
+ * URL of issue 4 <<https://github.com/Buckerton/lab-agile-planning/issues/16 One sentence explanation of why issue was not completed>>
  
  Examples of explanations (Remove this section when you save the file):
   * "We ran into a complication we did not anticipate (explain briefly)." 
@@ -77,6 +78,7 @@ Here are changes we plan to implement in the next sprint:
 
 Story point totals:
    * Arni Thorvaldsson - 2
+
 
 
 
