@@ -71,6 +71,8 @@ Here are changes we plan to implement in the next sprint:
 Story point totals:
    * Arni Thorvaldsson - 2
    * Tony Cao - 1
+   * Kaiyu Adachi - 2
+
 
 
 
