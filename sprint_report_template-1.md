@@ -1,15 +1,13 @@
 # Sprint x Report 
 Video Link: 
 ## What's New (User Facing)
- * Create a simple login page - Andres Sanchez 
+ * Created a simple login page - Andres Sanchez 
  * Created a simple account registration page that works with multiple users and saves registration info for login access - Arni Thorvaldsson
  * Created a simple forgot password feature working with the registration page and login access - Kaiyu Adachi
  * Created a simple dark mode - Tony CAo
 
 ## Work Summary (Developer Facing)
 Provide a one paragraph synposis of what your team accomplished this sprint. Don't repeat the "What's New" list of features. Instead, help the instructor understand how you went about the work described there, any barriers you overcame, and any significant learnings for your team.
-
-* So far whats accomplished is a simple login page. The process of making the login page was super easy since it was just front end focued. I had to do a bit of research to see what the kekwords were in HTML to create boxes and stuff however it was not bad at all. I learned how to link items so I can style them in css.
 
 * This sprint we got the basic login, forgot password , registration system and dark mode working for our grade tracker and learned a lot about how to actually build features as a team. We set up the pages for login, registration, forgot password feature and a simple dashboard, and figured out how to save multiple user accounts in local storage since we don’t have a backend yet. One of the harder parts was just getting used to Git — we had some confusion at first but we worked it out by sticking to branches and pull requests so nothing got lost. Overall, we came away with a better understanding of how to break tasks down, how to connect our code together, and how important communication is for making progress as a group.
 
@@ -21,7 +19,7 @@ If applicable, explain the work you did not finish in this sprint. For issues/us
 ## Completed Issues/User Stories
 Here are links to the issues that we completed in this sprint:
 
- *[ URL of issue 1]: (https://github.com/Buckerton/lab-agile-planning/issues/10#issue-3475788915)
+ * URL of issue 1 (https://github.com/Buckerton/lab-agile-planning/issues/10#issue-3475788915)
  * URL of issue 2 https://github.com/Buckerton/lab-agile-planning/issues/11
  * URL of issue 3 https://github.com/Buckerton/lab-agile-planning/issues/13
  * URL of issue 4 https://github.com/Buckerton/lab-agile-planning/issues/15
@@ -72,6 +70,8 @@ Story point totals:
    * Arni Thorvaldsson - 2
    * Tony Cao - 1
    * Kaiyu Adachi - 2
+   * Andres Sanchez - 1
+
 
 
 
