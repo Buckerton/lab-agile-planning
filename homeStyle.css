@@ -11,7 +11,7 @@ body {
 }
 
 /* Shared box styling (login, register, dashboard) */
-.web-name, .login-container, .register-container, .dashboard {
+.web-name, .login-container, .register-container, .dashboard, .reset-container {
   background-color: white;
   padding: 2rem;
   border-radius: 10px;
@@ -23,7 +23,8 @@ body {
 
 /* Input fields */
 .login-container input,
-.register-container input {
+.register-container input,
+.reset-container input {
   width: 85%;
   margin: 10px 0;
   padding: 0.8rem;
@@ -34,7 +35,8 @@ body {
 /* Buttons */
 .login-container button,
 .register-container button,
-.dashboard button {
+.dashboard button,
+.reset-container button {
   width: 100%;
   padding: 0.8rem;
   background-color: #0078d7;
@@ -47,7 +49,8 @@ body {
 /* Hover effect for buttons */
 .login-container button:hover,
 .register-container button:hover,
-.dashboard button:hover {
+.dashboard button:hover,
+.reset-container button:hover {
   background-color: #005a9e;
 }
 
