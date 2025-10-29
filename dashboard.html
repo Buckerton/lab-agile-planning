@@ -4,18 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Crimson Canvas — Dashboard</title>
-  <link rel="stylesheet" href="homeStyle.css">
+  <link rel="stylesheet" href="dashboard.css">
 </head>
+
 <body>
   <!-- User’s dashboard -->
   <div class="dashboard">
     <h2>Welcome, <span id="who"></span>!</h2>
-    <button id="darkModeToggle" style="margin-bottom: 1rem;">Toggle Dark Mode</button>
     <p>You are now logged in. (Demo auth via localStorage)</p>
     <div class="button-row">
       <button type="button" id="logoutBtn">Logout</button>
+      <button type="button" id="addClassBtn">Add Class</button>
     </div>
+    <div class="class-container" id="classContainer"></div>
   </div>
-  <script src="script.js"></script>
+
+  <!-- InputBox-->
+   <div id="addClassModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h3> Add New Class</h3>
+        <input tpye="text" id="newClassInput" placeholder="Enter class name" />
+        <button id="saveClassBtn">Add Class</button>
+      </div>
+   </div>
+
+  <script src="dashboard.js"></script>
 </body>
 </html>
