@@ -1,3 +1,4 @@
+<!-- dashboard.html (updated: add course click to open detail view) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,6 @@
 </head>
 
 <body>
-  <!-- User’s dashboard -->
   <div class="dashboard">
     <h2>Welcome, <span id="who"></span>!</h2>
     <p>You are now logged in. (Demo auth via localStorage)</p>
@@ -17,18 +17,38 @@
       <button type="button" id="logoutBtn">Logout</button>
       <button type="button" id="addClassBtn">Add Class</button>
     </div>
+
     <div class="class-container" id="classContainer"></div>
   </div>
 
-  <!-- InputBox-->
-   <div id="addClassModal" class="modal">
-      <div class="modal-content">
-        <span id="closeModal" class="close">&times;</span>
-        <h3> Add New Class</h3>
-        <input tpye="text" id="newClassInput" placeholder="Enter class name" />
-        <button id="saveClassBtn">Add Class</button>
-      </div>
-   </div>
+  <!-- Course Detail View (hidden initially) -->
+  <div id="courseDetail" class="dashboard" style="display: none; margin-top: 40px;">
+    <button id="backToDashboard">Back to Classes</button>
+    <h2 id="courseTitle"></h2>
+    <button id="addAssignmentBtn">Add Assignment</button>
+    <div id="assignmentContainer"></div>
+  </div>
+
+  <!-- Add-Class Modal -->
+  <div id="addClassModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">×</span>
+      <h3>Add New Class</h3>
+      <input type="text" id="newClassInput" placeholder="Enter class name" />
+      <button id="saveClassBtn">Add Class</button>
+    </div>
+  </div>
+
+  <!-- Add/Edit Assignment Modal -->
+  <div id="assignmentModal" class="modal">
+    <div class="modal-content">
+      <span id="closeAssignmentModal" class="close">×</span>
+      <h3 id="modalTitle">Add Assignment</h3>
+      <input type="text" id="assignmentName" placeholder="Assignment name" />
+      <input type="number" id="assignmentGrade" placeholder="Grade (0-100)" min="0" max="100" />
+      <button id="saveAssignmentBtn">Save</button>
+    </div>
+  </div>
 
   <script src="dashboard.js"></script>
 </body>

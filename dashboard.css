@@ -1,4 +1,4 @@
-/*Body for dashboard*/
+/* Body for dashboard */
 body {
     font-family: Arial, sans-serif;
     background: #F5F5F5;
@@ -10,25 +10,23 @@ body {
     min-height: 100vh;
 }
 
-/*Dashboard container*/
+/* Dashboard container */
 .dashboard {
-margin-top: 40px;
-background: white;
-border-radius: 12px;
-padding: 30px;
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-width: 90%;
-max-width:9 00px;
+    margin-top: 40px;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 900px;
 }
 
-/* heading*/
-.dashboard h2 {
-    margin-top: 0;
-}
+/* heading */
+.dashboard h2 { margin-top: 0; }
 
-/*Buttons*/
+/* Buttons */
 button {
-    background-color:  #8b0000;
+    background-color: #8b0000;
     color: white;
     border: none;
     padding: 10px 16px;
@@ -36,29 +34,26 @@ button {
     cursor: pointer;
     transition: background 0.2s;
 }
+button:hover { background-color: #a60000; }
 
-button:hover {
-    background-color: #a60000;
-}
-
-/* Puting butons in a row*/
+/* Button row */
 .button-row {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-/*Container for classes*/
+/* Classes grid */
 .class-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px
+    gap: 20px;
 }
 
-/*Individual class*/
+/* Individual card */
 .class-card {
     position: relative;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem;
     margin: 0.5rem;
     border: 1px solid #dcdcdc;
     border-radius: 8px;
@@ -68,17 +63,12 @@ button:hover {
     justify-content: space-between;
     transition: background-color 0.2s;
 }
+.class-card:hover { background: #dcdcdc; }
 
-.class-card:hover {
-    background: #dcdcdc
-}
+/* Class name */
+.class-card span { font-weight: 500; }
 
-/* Class Name Text */
-.class-card span{
-    font-weight: 500;
-}
-
-/*More options Button ... horizontally */
+/* More-options button */
 .class-card .morebtn {
     position: absolute;
     top: 0.4rem;
@@ -90,24 +80,18 @@ button:hover {
     padding: 0;
     line-height: 1;
 }
+.class-card .morebtn:hover { color: #ff4d4f; }
 
-.class-card .morebtn:hover {
-    color: #ff4d4f
-}
-
+/* Modal */
 .modal {
     display: none;
     position: fixed;
     z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-
+    background-color: rgba(0,0,0,0.5);
 }
-
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -117,11 +101,77 @@ button:hover {
     text-align: center;
     position: relative;
 }
-
-.close{
+.close {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 20px;
     cursor: pointer;
+}
+
+/* dashboard.css (add these to your existing file) */
+
+/* Course detail view */
+#courseDetail {
+    width: 90%;
+    max-width: 900px;
+}
+
+/* Assignment list */
+.assignment-list {
+    margin-top: 20px;
+}
+
+.assignment-item {
+    position: relative;
+    padding: 0.5rem 1rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    transition: background 0.2s;
+}
+
+.assignment-item:hover {
+    background: #eaeaea;
+}
+
+.assignment-item button {
+    background: transparent;
+    border: none;
+    color: #8b0000;
+    cursor: pointer;
+}
+
+.assignment-item button:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode for new elements */
+body.dark-mode .assignment-item {
+    background: #2a2a2a;
+    border-color: #444;
+}
+
+body.dark-mode .assignment-item:hover {
+    background: #333;
+}
+
+/* Modal inputs */
+.modal-content input {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+body.dark-mode .modal-content input {
+    background: #333;
+    color: #e0e0e0;
+    border-color: #555;
 }
