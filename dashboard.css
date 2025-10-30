@@ -175,3 +175,12 @@ body.dark-mode .modal-content input {
     color: #e0e0e0;
     border-color: #555;
 }
+
+.class-card small {
+  color: #555;
+  font-size: 0.85rem;
+}
+
+body.dark-mode .class-card small {
+  color: #ccc;
+}

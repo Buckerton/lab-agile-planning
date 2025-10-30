@@ -64,9 +64,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const card = document.createElement("div");
             card.className = "class-card";
 
-            const title = document.createElement("span");
-            title.textContent = name;
+            const title = document.createElement("div");
+            title.innerHTML = `<strong>${name}</strong><br><small>Average: ${calculateClassAverage(name)}</small>`;
             card.appendChild(title);
+
 
             const more = document.createElement("button");
             more.textContent = "⋮";
@@ -194,6 +195,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         saveAssignments(currentCourse, assigns);
         renderAssignments();
+        renderClasses(); // update average grade shown on dashboard
         assignmentModal.style.display = "none";
     });
+
+    // --- Calculate Class Grade Function ---
+    function calculateClassAverage(course) {
+        const assigns = loadAssignments(course);
+        if (!assigns.length) return "N/A";
+        const total = assigns.reduce((sum, a) => sum + a.grade, 0);
+        return (total / assigns.length).toFixed(1) + "%";
+}
+
 });
