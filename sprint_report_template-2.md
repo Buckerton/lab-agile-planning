@@ -11,8 +11,6 @@ Provide a one paragraph synposis of what your team accomplished this sprint. Don
 
 * During this sprint, I focused on implementing the automatic grade average calculation feature for each class in the Grade Tracker. This involved integrating assignment-level grade data with the class-level view to compute real-time averages whenever grades were added or updated. I collaborated with the team to ensure the feature aligned with our existing data structure and UI design. Along the way, I resolved issues with state updates and data flow between components, which improved my understanding of React hooks and modular component communication.
 
-//NOTE FOR WORK SUMMARY: Merge everyones accomplishments into one paragraph instead of all being seperated ^^^^^ ***IMPORTANT
-
 ## Unfinished Work
 THere were a few features/issues that we did not get to or did not complete this sprint that we originally wanted to. This includes a circle graph which would depict grading based on weight of the type of assignment. This was in progress however other features were more important and prioritized with our time. The other two features that did not even get in progress were deploying service to the cloud and updating UI. Deploying service to the cloud would have been nice but it is low priority and is not super important as of sprint 2 for our web apps funcionality. Updating the UI is something we want to do overtime, but how pretty the web app looks is not as important as if the web app even works. Functionality comes before looks, so it is most likely something we will update over time slowly or a last sprint type of feature.
 
