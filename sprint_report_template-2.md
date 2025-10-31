@@ -3,8 +3,8 @@ Video Link:
 ## What's New (User Facing)
  * Created a *** - Andres Sanchez 
  * Created a simple class grade average calculation that provides a class grade based on graded assignments - Arni Thorvaldsson
- * Created a an option to add due dates when adding assignments. Also added an upcoming assignments display on the dashboard showing the next week of assignments sorted by earliest due. Also added a check mark next to upcoming assignments and other assignments to check them off to be done. - Kaiyu Adachi
- * Created a *** - Tony CAo
+ * Created an option to add due dates when adding assignments. Also added an upcoming assignments display on the dashboard showing the next week of assignments sorted by earliest due. Also added a check mark next to upcoming assignments and other assignments to check them off to be done. - Kaiyu Adachi
+ * Created an add a new assignment grade and edit an existing assignment grade  - Tony Cao
 
 ## Work Summary (Developer Facing)
 
@@ -19,7 +19,7 @@ Here are links to the issues that we completed in this sprint:
  * URL of issue 1 https://github.com/Buckerton/lab-agile-planning/issues/18
  * URL of issue 2 https://github.com/Buckerton/lab-agile-planning/issues/23
  * URL of issue 3 
- * URL of issue 4 
+ * URL of issue 4 https://github.com/Buckerton/lab-agile-planning/issues/17
  
  ## Incomplete Issues/User Stories
  Here are links to issues we worked on but did not complete in this sprint:
