@@ -71,9 +71,3 @@ Story point totals:
    * Tony Cao - 1
    * Kaiyu Adachi - 2
    * Andres Sanchez - 1
-
-
-
-
-
-
