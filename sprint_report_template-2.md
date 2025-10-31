@@ -18,8 +18,9 @@ Here are links to the issues that we completed in this sprint:
 
  * URL of issue 1 https://github.com/Buckerton/lab-agile-planning/issues/18
  * URL of issue 2 https://github.com/Buckerton/lab-agile-planning/issues/23
- * URL of issue 3 
- * URL of issue 4 
+ * URL of issue 3 https://github.com/Buckerton/lab-agile-planning/issues/17
+ * URL of issue 4 https://github.com/Buckerton/lab-agile-planning/issues/16
+ * URL of issue 5 https://github.com/Buckerton/lab-agile-planning/issues/19
  
  ## Incomplete Issues/User Stories
  Here are links to issues we worked on but did not complete in this sprint:
