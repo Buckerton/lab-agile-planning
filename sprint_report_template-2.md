@@ -14,7 +14,7 @@ Provide a one paragraph synposis of what your team accomplished this sprint. Don
 //NOTE FOR WORK SUMMARY: Merge everyones accomplishments into one paragraph instead of all being seperated ^^^^^ ***IMPORTANT
 
 ## Unfinished Work
-THere were a few features/issues that we did not get to or did not complete this sprint that we originally wanted to.
+THere were a few features/issues that we did not get to or did not complete this sprint that we originally wanted to. This includes a circle graph which would depict grading based on weight of the type of assignment. This was in progress however other features were more important and prioritized with our time. The other two features that did not even get in progress were deploying service to the cloud and updating UI. Deploying service to the cloud would have been nice but it is low priority and is not super important as of sprint 2 for our web apps funcionality. Updating the UI is something we want to do overtime, but how pretty the web app looks is not as important as if the web app even works. Functionality comes before looks, so it is most likely something we will update over time slowly or a last sprint type of feature.
 
 ## Completed Issues/User Stories
 Here are links to the issues that we completed in this sprint:
