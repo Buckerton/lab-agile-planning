@@ -19,7 +19,7 @@ Here are links to the issues that we completed in this sprint:
  * URL of issue 1 https://github.com/Buckerton/lab-agile-planning/issues/18
  * URL of issue 2 https://github.com/Buckerton/lab-agile-planning/issues/23
 <<<<<<< HEAD
- * URL of issue 3 
+ * URL of issue 3 https://github.com/Buckerton/lab-agile-planning/issues/16
  * URL of issue 4
 =======
  * URL of issue 3 https://github.com/Buckerton/lab-agile-planning/issues/17
