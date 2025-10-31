@@ -18,12 +18,9 @@ Here are links to the issues that we completed in this sprint:
 
  * URL of issue 1 https://github.com/Buckerton/lab-agile-planning/issues/18
  * URL of issue 2 https://github.com/Buckerton/lab-agile-planning/issues/23
-<<<<<<< HEAD
-=======
  * URL of issue 3 https://github.com/Buckerton/lab-agile-planning/issues/17
  * URL of issue 4 https://github.com/Buckerton/lab-agile-planning/issues/16
  * URL of issue 5 https://github.com/Buckerton/lab-agile-planning/issues/19
->>>>>>> 4df83de5726c5c214e7b0093de1f7c53635e92f7
  
  ## Incomplete Issues/User Stories
  Here are links to issues we worked on but did not complete in this sprint:
@@ -46,22 +43,25 @@ Please review the following code files, which were actively developed during thi
  
 ## Retrospective Summary
 Here's what went well:
-  * Item 1: We knew what we wanted to do
+  * Item 1: We knew what we wanted to do and were able to finish our main goals.
   * Item 2: We met together and easily decided what we would all work on individually
   * Item 3: Foundational issues that we worked on went well and developed smoothly with little to no problems
- 
+  * item 4: We prioritized our main goals instead of improvements.
+    
 Here's what we'd like to improve:
    * Item 1: Utilizing the Kanban Board throughout
    * Item 2: Holding a Planning Poker Meeting to estimate user stories relatively
-   * Item 3: Working on more issues and developing more functionalities 
+   * Item 3: Working on more issues and developing more functionalities that will imrove user experience.
+   * Item 4: I Andres would try to add a little more time to the project I just find it hard since I have so much class work each week but ima try a bit more. 
   
 Here are changes we plan to implement in the next sprint:
    * Item 1: Using Kanban board
    * Item 2: Holding a Planning Poker Meeting to estimate user stories relatively
-   * Item 3: Working on more issues and developing more functionalities 
+   * Item 3: Working on more issues and developing more functionalities
+   * Item 4: Adding features that will improve the application since we got the main idea down. Now we just add the nice little extras in this next sprint.
 
 Story point totals:
    * Arni Thorvaldsson - 2
    * Tony Cao - 1
    * Kaiyu Adachi - 2
-   * Andres Sanchez - 1
+   * Andres Sanchez - 2
