@@ -1,4 +1,4 @@
-// dashboard.js (complete updated version with assignments)
+// dashboard.js (complete updated version with assignments and due dates)
 
 const SESSION_KEY = "session";
 function getSession(){ try { return JSON.parse(localStorage.getItem(SESSION_KEY)); } catch { return null; } }
@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const backToDashboard    = document.getElementById("backToDashboard");
     const courseTitle        = document.getElementById("courseTitle");
     const addAssignmentBtn   = document.getElementById("addAssignmentBtn");
-    const assignmentContainer= document.getElementById("assignmentContainer");
+    const upcomingAssignmentsContainer = document.getElementById("upcomingAssignmentsContainer");
+    const gradedAssignmentsContainer = document.getElementById("gradedAssignmentsContainer");
+    const upcomingContainer = document.getElementById("upcomingContainer");
 
     // Modals
     const addClassModal      = document.getElementById("addClassModal");
@@ -27,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalTitle         = document.getElementById("modalTitle");
     const assignmentName     = document.getElementById("assignmentName");
     const assignmentGrade    = document.getElementById("assignmentGrade");
+    const assignmentDueDate  = document.getElementById("assignmentDueDate");
     const saveAssignmentBtn  = document.getElementById("saveAssignmentBtn");
 
     // Session check
@@ -55,6 +58,187 @@ document.addEventListener("DOMContentLoaded", () => {
     const loadAssignments = (course) => JSON.parse(localStorage.getItem(getAssignKey(course))) || [];
     const saveAssignments = (course, arr) => localStorage.setItem(getAssignKey(course), JSON.stringify(arr));
 
+    // Load all assignments across all classes for upcoming assignments
+    const loadAllAssignments = () => {
+        const classes = loadClasses();
+        let allAssignments = [];
+        classes.forEach(course => {
+            const assignments = loadAssignments(course);
+            assignments.forEach(assign => {
+                allAssignments.push({
+                    ...assign,
+                    course: course,
+                    dueDate: assign.dueDate || null
+                });
+            });
+        });
+        return allAssignments;
+    };
+
+    // Get upcoming assignments (next 7 days)
+    const getUpcomingAssignments = () => {
+        const allAssignments = loadAllAssignments();
+        const today = new Date();
+        const nextWeek = new Date();
+        nextWeek.setDate(today.getDate() + 7);
+        
+        return allAssignments
+            .filter(assign => {
+                if (!assign.dueDate) return false;
+                if (assign.grade && assign.grade > 0) return false;
+                const dueDate = new Date(assign.dueDate);
+                return dueDate >= today && dueDate <= nextWeek;
+            })
+            .sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+    };
+
+    // Render upcoming assignments on dashboard
+    const renderUpcomingAssignments = () => {
+        upcomingContainer.innerHTML = "";
+        const upcoming = getUpcomingAssignments();
+        
+        if (upcoming.length === 0) {
+            upcomingContainer.innerHTML = "<p>No upcoming assignments in the next week.</p>";
+            return;
+        }
+
+        upcoming.forEach(assign => {
+            const item = document.createElement("div");
+            item.className = "upcoming-item";
+    
+            const dueDate = new Date(assign.dueDate);
+            const formattedDate = dueDate.toLocaleDateString();
+    
+            item.innerHTML = `
+                <div class="upcoming-content">
+                    <strong>${assign.name}</strong> - ${assign.course}<br>
+                    <small>Due: ${formattedDate}</small>
+                </div>
+                <button class="check-btn" data-course="${assign.course}" data-assignment="${assign.name}">✓</button>
+            `;
+    
+            // Add check button functionality
+            const checkBtn = item.querySelector('.check-btn');
+            checkBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                completeAssignment(assign.course, assign.name);
+            });
+    
+            upcomingContainer.appendChild(item);
+        });
+    };
+
+    const completeAssignment = (courseName, assignmentName) => {
+        if (confirm(`Mark "${assignmentName}" as completed?`)) {
+            const assigns = loadAssignments(courseName);
+            const assignIndex = assigns.findIndex(a => a.name === assignmentName);
+        
+            if (assignIndex !== -1) {
+                // If not graded, ask if they want to add a grade
+                if (!assigns[assignIndex].grade) {
+                    const grade = prompt(`Enter grade for "${assignmentName}" (0-100), or click Cancel to skip:`);
+                    if (grade !== null) {
+                        const gradeNum = parseInt(grade);
+                        if (!isNaN(gradeNum) && gradeNum >= 0 && gradeNum <= 100) {
+                            assigns[assignIndex].grade = gradeNum;
+                        }
+                    }
+                }
+                // Remove due date to remove from upcoming
+                assigns[assignIndex].dueDate = "";
+                saveAssignments(courseName, assigns);
+                renderUpcomingAssignments();
+                renderClasses();
+            }
+        }
+    };
+
+    // Helper function to create assignment item
+    const createAssignmentItem = (assign, index, isGraded) => {
+        const item = document.createElement("div");
+        item.className = "assignment-item";
+
+        let dueDateText = "";
+        if (assign.dueDate) {
+            const dueDate = new Date(assign.dueDate);
+            dueDateText = ` - Due: ${dueDate.toLocaleDateString()}`;
+        }
+
+        const info = document.createElement("span");
+        if (isGraded) {
+            info.textContent = `${assign.name}: ${assign.grade}%${dueDateText}`;
+        } else {
+            info.textContent = `${assign.name}${assign.grade ? `: ${assign.grade}%` : ''}${dueDateText}`;
+        }
+        item.appendChild(info);
+
+        const buttonContainer = document.createElement("div");
+        buttonContainer.style.display = "flex";
+        buttonContainer.style.gap = "5px";
+
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.addEventListener("click", () => openAssignmentModal(index));
+        item.appendChild(editBtn);
+
+        if (!isGraded && assign.dueDate) {
+            const completeBtn = document.createElement("button");
+            completeBtn.textContent = "✓";
+            completeBtn.style.background = "#4CAF50";
+            completeBtn.addEventListener("click", () => {
+                completeAssignment(currentCourse, assign.name);
+            });
+            buttonContainer.appendChild(completeBtn);
+        }
+
+        item.appendChild(buttonContainer);
+
+        return item;
+    };
+
+    // Render assignments by category (upcoming vs graded)
+    const renderAssignments = () => {
+        upcomingAssignmentsContainer.innerHTML = "";
+        gradedAssignmentsContainer.innerHTML = "";
+    
+        const assigns = loadAssignments(currentCourse);
+    
+        // Graded assignments - anything with a grade goes here
+        const graded = assigns.filter(assign => assign.grade && assign.grade > 0)
+                            .sort((a, b) => b.grade - a.grade);
+
+        // Upcoming assignments - only ungraded assignments
+        const upcoming = assigns.filter(assign => !assign.grade || assign.grade === 0)
+                            .sort((a, b) => {
+            // Sort by due date, assignments without due date go last
+            if (!a.dueDate) return 1;
+            if (!b.dueDate) return -1;
+            return new Date(a.dueDate) - new Date(b.dueDate);
+        });
+
+        // Render upcoming assignments
+        if (upcoming.length === 0) {
+            upcomingAssignmentsContainer.innerHTML = "<p>No upcoming assignments.</p>";
+        } else {
+            upcoming.forEach((assign, i) => {
+                const originalIndex = assigns.indexOf(assign);
+                const item = createAssignmentItem(assign, originalIndex, false);
+                upcomingAssignmentsContainer.appendChild(item);
+            });
+        }
+
+        // Render graded assignments
+        if (graded.length === 0) {
+            gradedAssignmentsContainer.innerHTML = "<p>No graded assignments.</p>";
+        } else {
+            graded.forEach((assign, i) => {
+                const originalIndex = assigns.indexOf(assign);
+                const item = createAssignmentItem(assign, originalIndex, true);
+                gradedAssignmentsContainer.appendChild(item);
+            });
+        }
+    };
+
     // Render classes
     const renderClasses = () => {
         classContainer.innerHTML = "";
@@ -67,7 +251,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const title = document.createElement("div");
             title.innerHTML = `<strong>${name}</strong><br><small>Average: ${calculateClassAverage(name)}</small>`;
             card.appendChild(title);
-
 
             const more = document.createElement("button");
             more.textContent = "⋮";
@@ -93,6 +276,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             classContainer.appendChild(card);
         });
+        
+        renderUpcomingAssignments();
     };
     renderClasses();
 
@@ -110,30 +295,9 @@ document.addEventListener("DOMContentLoaded", () => {
         courseDetail.style.display = "none";
         dashboard.style.display = "block";
         currentCourse = null;
-        assignmentContainer.innerHTML = "";
+        upcomingAssignmentsContainer.innerHTML = "";
+        gradedAssignmentsContainer.innerHTML = "";
     });
-
-    // Render assignments
-    const renderAssignments = () => {
-        assignmentContainer.innerHTML = "";
-        const assigns = loadAssignments(currentCourse);
-
-        assigns.forEach((assign, i) => {
-            const item = document.createElement("div");
-            item.className = "assignment-item";
-
-            const info = document.createElement("span");
-            info.textContent = `${assign.name}: ${assign.grade}%`;
-            item.appendChild(info);
-
-            const editBtn = document.createElement("button");
-            editBtn.textContent = "Edit";
-            editBtn.addEventListener("click", () => openAssignmentModal(i));
-            item.appendChild(editBtn);
-
-            assignmentContainer.appendChild(item);
-        });
-    };
 
     // Add class modal
     addClassBtn?.addEventListener("click", () => {
@@ -162,12 +326,16 @@ document.addEventListener("DOMContentLoaded", () => {
         editIndex = index;
         assignmentName.value = "";
         assignmentGrade.value = "";
+        assignmentDueDate.value = "";
         modalTitle.textContent = index === -1 ? "Add Assignment" : "Edit Assignment";
 
         if (index !== -1) {
             const assigns = loadAssignments(currentCourse);
             assignmentName.value = assigns[index].name;
             assignmentGrade.value = assigns[index].grade;
+            if (assigns[index].dueDate) {
+                assignmentDueDate.value = assigns[index].dueDate;
+            }
         }
 
         assignmentModal.style.display = "block";
@@ -182,29 +350,32 @@ document.addEventListener("DOMContentLoaded", () => {
     saveAssignmentBtn?.addEventListener("click", () => {
         const name = assignmentName.value.trim();
         const grade = parseInt(assignmentGrade.value, 10);
-        if (!name || isNaN(grade) || grade < 0 || grade > 100) {
-            alert("Enter valid name and grade (0-100).");
+        const dueDate = assignmentDueDate.value;
+
+        if (!name) {
+            alert("Enter a valid assignment name.");
             return;
         }
 
         const assigns = loadAssignments(currentCourse);
         if (editIndex === -1) {
-            assigns.push({ name, grade });
+            assigns.push({ name, grade, dueDate });
         } else {
-            assigns[editIndex] = { name, grade };
+            assigns[editIndex] = { name, grade, dueDate };
         }
         saveAssignments(currentCourse, assigns);
         renderAssignments();
-        renderClasses(); // update average grade shown on dashboard
+        renderClasses();
+        renderUpcomingAssignments();
         assignmentModal.style.display = "none";
     });
 
-    // --- Calculate Class Grade Function ---
+    // Calculate Class Grade Function
     function calculateClassAverage(course) {
         const assigns = loadAssignments(course);
-        if (!assigns.length) return "N/A";
-        const total = assigns.reduce((sum, a) => sum + a.grade, 0);
-        return (total / assigns.length).toFixed(1) + "%";
-}
-
+        const gradedAssigns = assigns.filter(a => a.grade && a.grade > 0);
+        if (!gradedAssigns.length) return "N/A";
+        const total = gradedAssigns.reduce((sum, a) => sum + a.grade, 0);
+        return (total / gradedAssigns.length).toFixed(1) + "%";
+    }
 });
