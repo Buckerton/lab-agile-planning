@@ -7,7 +7,6 @@ Video Link:
  * Created a *** - Tony CAo
 
 ## Work Summary (Developer Facing)
-Provide a one paragraph synposis of what your team accomplished this sprint. Don't repeat the "What's New" list of features. Instead, help the instructor understand how you went about the work described there, any barriers you overcame, and any significant learnings for your team.
 
 * During this sprint, I focused on implementing the automatic grade average calculation feature for each class in the Grade Tracker. This involved integrating assignment-level grade data with the class-level view to compute real-time averages whenever grades were added or updated. I collaborated with the team to ensure the feature aligned with our existing data structure and UI design. Along the way, I resolved issues with state updates and data flow between components, which improved my understanding of React hooks and modular component communication.
 
