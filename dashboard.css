@@ -184,3 +184,30 @@ body.dark-mode .modal-content input {
 body.dark-mode .class-card small {
   color: #ccc;
 }
+
+.upcoming-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 8px 0;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.upcoming-content {
+    flex-grow: 1;
+}
+
+.check-btn {
+    background: #4CAF50;
+    margin-left: 10px;
+    padding: 4px 8px;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.check-btn:hover {
+    background: #45a049;
+}
