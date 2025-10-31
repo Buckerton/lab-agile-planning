@@ -1,5 +1,5 @@
 # Sprint x Report 
-Video Link: 
+Video Link: youtube.com/watch?v=IA6I30h7sDw&feature=youtu.be
 ## What's New (User Facing)
  * Created a simple add class feature that lets the user add any ammount of classes they are taking. On top of that it lets the user delete the class via the 3 sideways dots. Those dots serve as a settings for each class. This will house some more features we plan to exicute in the next sprint. - Andres Sanchez 
  * Created a simple class grade average calculation that provides a class grade based on graded assignments - Arni Thorvaldsson
