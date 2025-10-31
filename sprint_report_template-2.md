@@ -1,15 +1,15 @@
 # Sprint x Report 
 Video Link: 
 ## What's New (User Facing)
- * Created a simple login page - Andres Sanchez 
- * Created a simple account registration page that works with multiple users and saves registration info for login access - Arni Thorvaldsson
- * Created a simple forgot password feature working with the registration page and login access - Kaiyu Adachi
- * Created a simple dark mode - Tony CAo
+ * Created a *** - Andres Sanchez 
+ * Created a simple class grade average calculation that provides a class grade based on graded assignments - Arni Thorvaldsson
+ * Created a *** - Kaiyu Adachi
+ * Created a *** - Tony CAo
 
 ## Work Summary (Developer Facing)
 Provide a one paragraph synposis of what your team accomplished this sprint. Don't repeat the "What's New" list of features. Instead, help the instructor understand how you went about the work described there, any barriers you overcame, and any significant learnings for your team.
 
-* This sprint we got the basic login, forgot password , registration system and dark mode working for our grade tracker and learned a lot about how to actually build features as a team. We set up the pages for login, registration, forgot password feature and a simple dashboard, and figured out how to save multiple user accounts in local storage since we don’t have a backend yet. One of the harder parts was just getting used to Git — we had some confusion at first but we worked it out by sticking to branches and pull requests so nothing got lost. Overall, we came away with a better understanding of how to break tasks down, how to connect our code together, and how important communication is for making progress as a group.
+* During this sprint, I focused on implementing the automatic grade average calculation feature for each class in the Grade Tracker. This involved integrating assignment-level grade data with the class-level view to compute real-time averages whenever grades were added or updated. I collaborated with the team to ensure the feature aligned with our existing data structure and UI design. Along the way, I resolved issues with state updates and data flow between components, which improved my understanding of React hooks and modular component communication.
 
 //NOTE FOR WORK SUMMARY: Merge everyones accomplishments into one paragraph instead of all being seperated ^^^^^ ***IMPORTANT
 
@@ -19,10 +19,10 @@ If applicable, explain the work you did not finish in this sprint. For issues/us
 ## Completed Issues/User Stories
 Here are links to the issues that we completed in this sprint:
 
- * URL of issue 1 (https://github.com/Buckerton/lab-agile-planning/issues/10#issue-3475788915)
- * URL of issue 2 https://github.com/Buckerton/lab-agile-planning/issues/11
- * URL of issue 3 https://github.com/Buckerton/lab-agile-planning/issues/13
- * URL of issue 4 https://github.com/Buckerton/lab-agile-planning/issues/15
+ * URL of issue 1 https://github.com/Buckerton/lab-agile-planning/issues/18
+ * URL of issue 2 
+ * URL of issue 3 
+ * URL of issue 4 
 
  Desirables (Remove this section when you save the file):
   * Each issue should be assigned to a milestone
@@ -35,10 +35,9 @@ Here are links to the issues that we completed in this sprint:
  ## Incomplete Issues/User Stories
  Here are links to issues we worked on but did not complete in this sprint:
  
- * URL of issue 1 <<https://github.com/Buckerton/lab-agile-planning/issues/19 We did not get to this issue because we ran out of time due to midterms before sprint 1 was due>>
- * URL of issue 2 <<https://github.com/Buckerton/lab-agile-planning/issues/18 We did not get to this issue because we ran out of time due to midterms before sprint 1 was due>>
- * URL of issue 3 <<https://github.com/Buckerton/lab-agile-planning/issues/17 We did not get to this issue because we ran out of time due to midterms before sprint 1 was due>>
- * URL of issue 4 <<https://github.com/Buckerton/lab-agile-planning/issues/16 We did not get to this issue because we ran out of time due to midterms before sprint 1 was due>>
+ * URL of issue 1 <<https://github.com/Buckerton/lab-agile-planning/issues/21 We did not get to this issue because 
+ * URL of issue 2 <<https://github.com/Buckerton/lab-agile-planning/issues/8 We did not get to this issue because 
+ * URL of issue 3 <<https://github.com/Buckerton/lab-agile-planning/issues/7 We did not get to this issue because 
 
 ## Code Files for Review
 Please review the following code files, which were actively developed during this sprint, for quality:
@@ -49,6 +48,8 @@ Please review the following code files, which were actively developed during thi
  * [script.js](https://github.com/Buckerton/lab-agile-planning/blob/main/script.js)
  * [forgot.html](https://github.com/Buckerton/lab-agile-planning/blob/main/forgot.html)
  * [reset.html](https://github.com/Buckerton/lab-agile-planning/blob/main/reset.html)
+ * [dashboard.css](https://github.com/Buckerton/lab-agile-planning/blob/main/dashboard.css)
+ * [dashboard.js](https://github.com/Buckerton/lab-agile-planning/blob/main/dashboard.js)
  
 ## Retrospective Summary
 Here's what went well:
