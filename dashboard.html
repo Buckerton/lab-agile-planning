@@ -34,17 +34,45 @@
     <button id="addAssignmentBtn">Add Assignment</button>
     
     <!-- Assignment Categories -->
-    <div class="assignment-categories">
-      <div class="category">
-        <h3>Upcoming Assignments</h3>
-        <div id="upcomingAssignmentsContainer"></div>
-      </div>
-      <div class="category">
-        <h3>Graded Assignments</h3>
-        <div id="gradedAssignmentsContainer"></div>
-      </div>
+    <div class="grade-section">
+      <canvas id="gradeDonut" width="300" height="300"></canvas>
+      <div id="gradeCenter" style="position: absolute; top: 50%; left: 50%;
+       transform: translate(-50%, -50%); font-size: 24px; font-weight: bold;">
+       0%
+      </div>  
     </div>
+
+    <div class="legend">
+      <div><span class="color hw"></span> Homework (20%)</div>
+      <div><span class="color quiz"></span> Quizzes (10%)</div>
+      <div><span class="color mid"></span> Midterm (30%)</div>
+      <div><span class="color final"></span> Final Exam (40%)</div>
+    </div>
+
+    <!-- CATEGORY SECTIONS-->
+    <div id="hwSection" class="category-block">
+      <h3>Homework</h3>
+      <div class="category-list" id="hwList"></div>
+    </div>
+
+    <div id="quizSection" class="category-block">
+      <h3>Quizzes</h3>
+      <div class="category-list" id="quizList"></div>
+    </div>
+
+   <div id="midSection" class="category-block">
+      <h3>Midterm</h3>
+      <div class="category-list" id="midList"></div>
+    </div>
+
+    <div id="finalSection" class="category-block">
+      <h3>Final Exam</h3>
+      <div class="category-list" id="finalList"></div>
+    </div>
+
+
   </div>
+
 
   <!-- Add-Class Modal -->
   <div id="addClassModal" class="modal">
@@ -65,7 +93,18 @@
       <input type="number" id="assignmentGrade" placeholder="Grade (0-100)" min="0" max="100" />
       <!-- NEW: Due Date Input -->
       <input type="date" id="assignmentDueDate" />
-      <button id="saveAssignmentBtn">Save</button>
+
+    <!-- Let user choose what-->
+      <select id="assignmentCategory">
+        <option value="hw">Homework</option>
+        <option value="quiz">Quiz</option>
+        <option value="mid">Midterm</option>
+        <option value="final">Final Exam</option>
+      </select>
+
+      <!-- save changes-->
+      <button id="saveAssignmentBtn">Save</button> 
+ 
     </div>
   </div>
 

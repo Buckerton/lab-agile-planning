@@ -211,3 +211,44 @@ body.dark-mode .class-card small {
 .check-btn:hover {
     background: #45a049;
 }
+
+.grade-section {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    margin: 20px auto;
+}
+
+#gradeDonut{
+    display: block;
+    margin: auto;
+}
+
+#gradeCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight:  bold;
+    color: #333
+}
+
+.legend {
+    width: 280px;
+    margin: 20px auto;
+    font-size: 16px;
+}
+
+.color {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    border-radius: 4px;
+}
+
+.color.hw {background: #4CAF50;}
+.color.quiz {background: #FF9800;}
+.color.mid {background: #2196F3;}
+.color.final {background: #9C27B0;}
